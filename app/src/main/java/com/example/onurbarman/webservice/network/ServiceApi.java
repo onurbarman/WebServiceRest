@@ -13,6 +13,8 @@ import retrofit2.http.GET;
  *
  */
 
+
+
 public interface ServiceApi {
 
     @GET("posts")
