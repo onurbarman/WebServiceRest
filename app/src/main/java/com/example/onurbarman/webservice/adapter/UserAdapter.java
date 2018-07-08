@@ -9,7 +9,6 @@ import android.widget.TextView;
 import com.example.onurbarman.webservice.R;
 import com.example.onurbarman.webservice.model.UserModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
@@ -26,7 +25,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
     public UserViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.row_user, parent, false);
+        View view = layoutInflater.inflate(R.layout.cardview_user, parent, false);
         return new UserViewHolder(view);
     }
 
@@ -34,9 +33,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
     @Override
     public void onBindViewHolder(UserViewHolder holder, int position) {
 
-        holder.txtUserId.setText(dataList.get(position).getUserId().toString());
-
-        holder.txtId.setText(dataList.get(position).getId().toString());
+        holder.txtUserId.setText(dataList.get(position).getId().toString());
 
         holder.txtTitle.setText(dataList.get(position).getTitle());
 
@@ -60,8 +57,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
             super(itemView);
 
             txtUserId = (TextView) itemView.findViewById(R.id.txt_user_id);
-
-            txtId = (TextView) itemView.findViewById(R.id.txt_id);
 
             txtTitle = (TextView) itemView.findViewById(R.id.txt_title);
 
