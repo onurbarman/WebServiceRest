@@ -3,7 +3,9 @@ package com.example.onurbarman.webservice.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class User {
+public class UserModel {
+
+
     @SerializedName("userId")
     @Expose
     private Long userId;

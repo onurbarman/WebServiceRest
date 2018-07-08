@@ -7,38 +7,31 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.onurbarman.webservice.R;
-import com.example.onurbarman.webservice.model.User;
+import com.example.onurbarman.webservice.model.UserModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
 
+    private List<UserModel> dataList;
 
-    private ArrayList<User> dataList;
 
-
-    public UserAdapter(ArrayList<User> dataList) {
-
+    public UserAdapter(List<UserModel> dataList) {
         this.dataList = dataList;
-
     }
 
 
     @Override
-
     public UserViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-
         View view = layoutInflater.inflate(R.layout.row_user, parent, false);
-
         return new UserViewHolder(view);
-
     }
 
 
     @Override
-
     public void onBindViewHolder(UserViewHolder holder, int position) {
 
         holder.txtUserId.setText(dataList.get(position).getUserId().toString());
@@ -48,7 +41,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         holder.txtTitle.setText(dataList.get(position).getTitle());
 
         holder.txtBody.setText(dataList.get(position).getBody());
-
     }
 
 
@@ -60,13 +52,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
 
     }
 
-
     class UserViewHolder extends RecyclerView.ViewHolder {
 
-
         TextView txtUserId, txtId, txtTitle, txtBody;
-
-
         UserViewHolder(View itemView) {
 
             super(itemView);
